@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source arty_eth_000_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# mc6800_controller, mc6800_controller
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -245,16 +252,28 @@ proc create_root_design { parentCell } {
   set usb_uart [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 usb_uart ]
 
   # Create ports
+  set address [ create_bd_port -dir I -from 15 -to 0 address ]
+  set btn [ create_bd_port -dir I btn ]
+  set cpu_clock [ create_bd_port -dir O -from 1 -to 0 -type clk cpu_clock ]
+  set data_from_fpga [ create_bd_port -dir O -from 7 -to 0 data_from_fpga ]
+  set data_from_fpga_enable_n [ create_bd_port -dir O data_from_fpga_enable_n ]
+  set data_to_fpga [ create_bd_port -dir I -from 7 -to 0 data_to_fpga ]
   set eth_ref_clk [ create_bd_port -dir O -type clk eth_ref_clk ]
+  set irq_n [ create_bd_port -dir O irq_n ]
+  set led [ create_bd_port -dir O -from 15 -to 0 led ]
+  set nmi_n [ create_bd_port -dir O nmi_n ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
  ] $reset
+  set reset_n [ create_bd_port -dir O -type rst reset_n ]
+  set sw [ create_bd_port -dir I -from 3 -to 0 sw ]
   set sys_clock [ create_bd_port -dir I -type clk sys_clock ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
    CONFIG.PHASE {0.000} \
  ] $sys_clock
+  set write_n [ create_bd_port -dir I write_n ]
 
   # Create instance: axi_ethernetlite_0, and set properties
   set axi_ethernetlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_ethernetlite:3.0 axi_ethernetlite_0 ]
@@ -293,18 +312,44 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT3_PHASE_ERROR {98.575} \
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {25.000} \
    CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT4_JITTER {130.958} \
+   CONFIG.CLKOUT4_PHASE_ERROR {98.575} \
+   CONFIG.CLKOUT4_USED {true} \
    CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {5} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {40} \
+   CONFIG.MMCM_CLKOUT3_DIVIDE {10} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.NUM_OUT_CLKS {3} \
+   CONFIG.NUM_OUT_CLKS {4} \
    CONFIG.RESET_BOARD_INTERFACE {reset} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $clk_wiz_0
 
+  # Create instance: mc6800_controller_0, and set properties
+  set block_name mc6800_controller
+  set block_cell_name mc6800_controller_0
+  if { [catch {set mc6800_controller_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $mc6800_controller_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: mc6800_controller_1, and set properties
+  set block_name mc6800_controller
+  set block_cell_name mc6800_controller_1
+  if { [catch {set mc6800_controller_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $mc6800_controller_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: mdm_1, and set properties
   set mdm_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mdm:3.2 mdm_1 ]
 
@@ -368,11 +413,22 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net mig_7series_0_DDR3 [get_bd_intf_ports ddr3_sdram] [get_bd_intf_pins mig_7series_0/DDR3]
 
   # Create port connections
+  connect_bd_net -net address_0_1 [get_bd_ports address] [get_bd_pins mc6800_controller_1/address]
   connect_bd_net -net axi_ethernetlite_0_ip2intc_irpt [get_bd_pins axi_ethernetlite_0/ip2intc_irpt] [get_bd_pins microblaze_0_xlconcat/In1]
   connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins microblaze_0_xlconcat/In0]
+  connect_bd_net -net btn_0_1 [get_bd_ports btn] [get_bd_pins mc6800_controller_1/btn]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins mig_7series_0/sys_clk_i]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins mig_7series_0/clk_ref_i]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_ports eth_ref_clk] [get_bd_pins clk_wiz_0/clk_out3]
+  connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_pins clk_wiz_0/clk_out4] [get_bd_pins mc6800_controller_1/CLK100MHZ]
+  connect_bd_net -net data_to_fpga_0_1 [get_bd_ports data_to_fpga] [get_bd_pins mc6800_controller_1/data_to_fpga]
+  connect_bd_net -net mc6800_controller_1_cpu_clock [get_bd_ports cpu_clock] [get_bd_pins mc6800_controller_1/cpu_clock]
+  connect_bd_net -net mc6800_controller_1_data_from_fpga [get_bd_ports data_from_fpga] [get_bd_pins mc6800_controller_1/data_from_fpga]
+  connect_bd_net -net mc6800_controller_1_data_from_fpga_enable_n [get_bd_ports data_from_fpga_enable_n] [get_bd_pins mc6800_controller_1/data_from_fpga_enable_n]
+  connect_bd_net -net mc6800_controller_1_irq_n [get_bd_ports irq_n] [get_bd_pins mc6800_controller_1/irq_n]
+  connect_bd_net -net mc6800_controller_1_led [get_bd_ports led] [get_bd_pins mc6800_controller_1/led]
+  connect_bd_net -net mc6800_controller_1_nmi_n [get_bd_ports nmi_n] [get_bd_pins mc6800_controller_1/nmi_n]
+  connect_bd_net -net mc6800_controller_1_reset_n [get_bd_ports reset_n] [get_bd_pins mc6800_controller_1/reset_n]
   connect_bd_net -net mdm_1_debug_sys_rst [get_bd_pins mdm_1/Debug_SYS_Rst] [get_bd_pins rst_mig_7series_0_83M/mb_debug_sys_rst]
   connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_ethernetlite_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins rst_mig_7series_0_83M/slowest_sync_clk]
   connect_bd_net -net microblaze_0_intr [get_bd_pins microblaze_0_axi_intc/intr] [get_bd_pins microblaze_0_xlconcat/dout]
@@ -383,7 +439,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net rst_mig_7series_0_83M_interconnect_aresetn [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins rst_mig_7series_0_83M/interconnect_aresetn]
   connect_bd_net -net rst_mig_7series_0_83M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins microblaze_0_axi_intc/processor_rst] [get_bd_pins rst_mig_7series_0_83M/mb_reset]
   connect_bd_net -net rst_mig_7series_0_83M_peripheral_aresetn [get_bd_pins axi_ethernetlite_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins rst_mig_7series_0_83M/peripheral_aresetn]
+  connect_bd_net -net sw_0_1 [get_bd_ports sw] [get_bd_pins mc6800_controller_1/sw]
   connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1]
+  connect_bd_net -net write_n_0_1 [get_bd_ports write_n] [get_bd_pins mc6800_controller_1/write_n]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x40E00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_ethernetlite_0/S_AXI/Reg] SEG_axi_ethernetlite_0_Reg

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1530482769">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1530498306">
   <File Type="PA-TCL" Name="arty_eth_000_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="arty_eth_000_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="arty_eth_000_wrapper_reports.tcl"/>
@@ -11,6 +11,13 @@
   <File Type="VDS-TIMING-PB" Name="arty_eth_000_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/mc6800_controller.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/arty_eth_000/arty_eth_000.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -45,21 +52,24 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/constrs_1/new/mc6800_controller.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_lmb_bram_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_dlmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_dlmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_ilmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_dlmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_ilmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_axi_smc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_mdm_1_0"/>
@@ -67,9 +77,10 @@
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_microblaze_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_axi_ethernetlite_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_clk_wiz_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_mig_7series_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_microblaze_0_axi_intc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_microblaze_0_xlconcat_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_rst_mig_7series_0_83M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_axi_uartlite_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_mc6800_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="arty_eth_000_mc6800_controller_1_0"/>
 </GenRun>

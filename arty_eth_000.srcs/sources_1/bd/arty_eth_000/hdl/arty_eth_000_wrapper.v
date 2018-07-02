@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Sun Jul  1 15:04:55 2018
+//Date        : Sun Jul  1 19:24:39 2018
 //Host        : DESKTOP-PV7K49D running 64-bit major release  (build 9200)
 //Command     : generate_target arty_eth_000_wrapper.bd
 //Design      : arty_eth_000_wrapper
@@ -10,7 +10,13 @@
 `timescale 1 ps / 1 ps
 
 module arty_eth_000_wrapper
-   (ddr3_sdram_addr,
+   (address,
+    btn,
+    cpu_clock,
+    data_from_fpga,
+    data_from_fpga_enable_n,
+    data_to_fpga,
+    ddr3_sdram_addr,
     ddr3_sdram_ba,
     ddr3_sdram_cas_n,
     ddr3_sdram_ck_n,
@@ -38,10 +44,22 @@ module arty_eth_000_wrapper
     eth_mii_tx_en,
     eth_mii_txd,
     eth_ref_clk,
+    irq_n,
+    led,
+    nmi_n,
     reset,
+    reset_n,
+    sw,
     sys_clock,
     usb_uart_rxd,
-    usb_uart_txd);
+    usb_uart_txd,
+    write_n);
+  input [15:0]address;
+  input btn;
+  output [1:0]cpu_clock;
+  output [7:0]data_from_fpga;
+  output data_from_fpga_enable_n;
+  input [7:0]data_to_fpga;
   output [13:0]ddr3_sdram_addr;
   output [2:0]ddr3_sdram_ba;
   output ddr3_sdram_cas_n;
@@ -70,11 +88,23 @@ module arty_eth_000_wrapper
   output eth_mii_tx_en;
   output [3:0]eth_mii_txd;
   output eth_ref_clk;
+  output irq_n;
+  output [15:0]led;
+  output nmi_n;
   input reset;
+  output reset_n;
+  input [3:0]sw;
   input sys_clock;
   input usb_uart_rxd;
   output usb_uart_txd;
+  input write_n;
 
+  wire [15:0]address;
+  wire btn;
+  wire [1:0]cpu_clock;
+  wire [7:0]data_from_fpga;
+  wire data_from_fpga_enable_n;
+  wire [7:0]data_to_fpga;
   wire [13:0]ddr3_sdram_addr;
   wire [2:0]ddr3_sdram_ba;
   wire ddr3_sdram_cas_n;
@@ -106,13 +136,25 @@ module arty_eth_000_wrapper
   wire eth_mii_tx_en;
   wire [3:0]eth_mii_txd;
   wire eth_ref_clk;
+  wire irq_n;
+  wire [15:0]led;
+  wire nmi_n;
   wire reset;
+  wire reset_n;
+  wire [3:0]sw;
   wire sys_clock;
   wire usb_uart_rxd;
   wire usb_uart_txd;
+  wire write_n;
 
   arty_eth_000 arty_eth_000_i
-       (.ddr3_sdram_addr(ddr3_sdram_addr),
+       (.address(address),
+        .btn(btn),
+        .cpu_clock(cpu_clock),
+        .data_from_fpga(data_from_fpga),
+        .data_from_fpga_enable_n(data_from_fpga_enable_n),
+        .data_to_fpga(data_to_fpga),
+        .ddr3_sdram_addr(ddr3_sdram_addr),
         .ddr3_sdram_ba(ddr3_sdram_ba),
         .ddr3_sdram_cas_n(ddr3_sdram_cas_n),
         .ddr3_sdram_ck_n(ddr3_sdram_ck_n),
@@ -142,10 +184,16 @@ module arty_eth_000_wrapper
         .eth_mii_tx_en(eth_mii_tx_en),
         .eth_mii_txd(eth_mii_txd),
         .eth_ref_clk(eth_ref_clk),
+        .irq_n(irq_n),
+        .led(led),
+        .nmi_n(nmi_n),
         .reset(reset),
+        .reset_n(reset_n),
+        .sw(sw),
         .sys_clock(sys_clock),
         .usb_uart_rxd(usb_uart_rxd),
-        .usb_uart_txd(usb_uart_txd));
+        .usb_uart_txd(usb_uart_txd),
+        .write_n(write_n));
   IOBUF eth_mdio_mdc_mdio_iobuf
        (.I(eth_mdio_mdc_mdio_o),
         .IO(eth_mdio_mdc_mdio_io),

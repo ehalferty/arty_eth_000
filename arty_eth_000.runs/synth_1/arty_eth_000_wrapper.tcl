@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7a35ticsg324-1L
 
 set_param project.singleFileAddWarning.threshold 0
@@ -104,6 +104,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc
 set_property used_in_implementation false [get_files C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc]
+
+read_xdc C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc
+set_property used_in_implementation false [get_files C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Jul  1 15:16:30 2018
-# Process ID: 16948
+# Start of session at: Sun Jul  1 19:26:44 2018
+# Process ID: 9396
 # Current directory: C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1
 # Command line: vivado.exe -log arty_eth_000_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source arty_eth_000_wrapper.tcl
 # Log file: C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/arty_eth_000_wrapper.vds
@@ -14,84 +14,90 @@ source arty_eth_000_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 374.012 ; gain = 97.234
+add_files: Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 374.969 ; gain = 97.574
 Command: synth_design -top arty_eth_000_wrapper -part xc7a35ticsg324-1L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1256 
+INFO: Helper process launched with PID 4768 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 483.984 ; gain = 103.066
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 486.320 ; gain = 104.305
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_wrapper' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/hdl/arty_eth_000_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'arty_eth_000' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:13]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_ethernetlite_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_ethernetlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_ethernetlite_0_0' (1#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_ethernetlite_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_smc_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_smc_0' (2#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_timer_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_timer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_timer_0_0' (3#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_timer_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'axi_timer_0' of module 'arty_eth_000_axi_timer_0_0' requires 26 connections, but only 23 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:480]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_uartlite_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_uartlite_0_0' (4#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_uartlite_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'axi_uartlite_0' of module 'arty_eth_000_axi_uartlite_0_0' requires 22 connections, but only 21 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:504]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_clk_wiz_0_1' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_clk_wiz_0_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_clk_wiz_0_1' (5#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_clk_wiz_0_1_stub.v:5]
-WARNING: [Synth 8-350] instance 'clk_wiz_0' of module 'arty_eth_000_clk_wiz_0_1' requires 6 connections, but only 5 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:526]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mdm_1_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mdm_1_0' (6#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_0' (7#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'microblaze_0' of module 'arty_eth_000_microblaze_0_0' requires 126 connections, but only 108 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:545]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_axi_intc_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_axi_intc_0' (8#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_axi_periph_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:876]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_KBKMHT' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1602]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_KBKMHT' (9#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1602]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_Q3REHT' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1734]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_Q3REHT' (10#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1734]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_SP4601' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1866]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_SP4601' (11#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1866]
-INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_V5GIW1' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1998]
-INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_V5GIW1' (12#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1998]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_NF1TTE' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2364]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_NF1TTE' (13#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2364]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_xbar_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_xbar_0' (14#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_xbar_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'xbar' of module 'arty_eth_000_xbar_0' requires 40 connections, but only 38 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1561]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_axi_periph_0' (15#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:876]
-INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1F2AIRY' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2130]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_dlmb_bram_if_cntlr_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_dlmb_bram_if_cntlr_0' (16#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_dlmb_v10_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_dlmb_v10_0' (17#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_v10_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'arty_eth_000_dlmb_v10_0' requires 25 connections, but only 24 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2276]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_ilmb_bram_if_cntlr_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_ilmb_bram_if_cntlr_0' (18#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_ilmb_v10_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_ilmb_v10_0' (19#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_v10_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'arty_eth_000_ilmb_v10_0' requires 25 connections, but only 24 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2322]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_lmb_bram_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_lmb_bram_0' (20#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_lmb_bram_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'lmb_bram' of module 'arty_eth_000_lmb_bram_0' requires 16 connections, but only 14 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2347]
-INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1F2AIRY' (21#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2130]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_xlconcat_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_xlconcat_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_xlconcat_0' (22#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_xlconcat_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mig_7series_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_mig_7series_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mig_7series_0_0' (23#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_mig_7series_0_0_stub.v:5]
-WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'arty_eth_000_mig_7series_0_0' requires 64 connections, but only 57 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:806]
-INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_rst_mig_7series_0_83M_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_rst_mig_7series_0_83M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_rst_mig_7series_0_83M_0' (24#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-16948-DESKTOP-PV7K49D/realtime/arty_eth_000_rst_mig_7series_0_83M_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'rst_mig_7series_0_83M' of module 'arty_eth_000_rst_mig_7series_0_83M_0' requires 10 connections, but only 9 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:864]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000' (25#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:13]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_ethernetlite_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_ethernetlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_ethernetlite_0_0' (1#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_ethernetlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_smc_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_smc_0' (2#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_timer_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_timer_0_0' (3#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_timer_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axi_timer_0' of module 'arty_eth_000_axi_timer_0_0' requires 26 connections, but only 23 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:529]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_axi_uartlite_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_axi_uartlite_0_0' (4#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_axi_uartlite_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axi_uartlite_0' of module 'arty_eth_000_axi_uartlite_0_0' requires 22 connections, but only 21 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:553]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_clk_wiz_0_1' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_clk_wiz_0_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_clk_wiz_0_1' (5#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_clk_wiz_0_1_stub.v:5]
+WARNING: [Synth 8-350] instance 'clk_wiz_0' of module 'arty_eth_000_clk_wiz_0_1' requires 7 connections, but only 6 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:575]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:582]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mc6800_controller_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mc6800_controller_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mc6800_controller_0_0' (6#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mc6800_controller_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'mc6800_controller_0' of module 'arty_eth_000_mc6800_controller_0_0' requires 13 connections, but only 6 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:582]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mc6800_controller_1_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mc6800_controller_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mc6800_controller_1_0' (7#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mc6800_controller_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mdm_1_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mdm_1_0' (8#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_0' (9#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'microblaze_0' of module 'arty_eth_000_microblaze_0_0' requires 126 connections, but only 108 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:616]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_axi_intc_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_axi_intc_0' (10#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_axi_periph_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:947]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_KBKMHT' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1673]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_KBKMHT' (11#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1673]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_Q3REHT' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1805]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_Q3REHT' (12#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1805]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_SP4601' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1937]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_SP4601' (13#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1937]
+INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_V5GIW1' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2069]
+INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_V5GIW1' (14#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2069]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_NF1TTE' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2435]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_NF1TTE' (15#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2435]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_xbar_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_xbar_0' (16#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_xbar_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xbar' of module 'arty_eth_000_xbar_0' requires 40 connections, but only 38 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:1632]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_axi_periph_0' (17#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:947]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1F2AIRY' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2201]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_dlmb_bram_if_cntlr_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_dlmb_bram_if_cntlr_0' (18#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_dlmb_v10_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_dlmb_v10_0' (19#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'arty_eth_000_dlmb_v10_0' requires 25 connections, but only 24 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2347]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_ilmb_bram_if_cntlr_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_ilmb_bram_if_cntlr_0' (20#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_ilmb_v10_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_ilmb_v10_0' (21#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'arty_eth_000_ilmb_v10_0' requires 25 connections, but only 24 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2393]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_lmb_bram_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_lmb_bram_0' (22#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'lmb_bram' of module 'arty_eth_000_lmb_bram_0' requires 16 connections, but only 14 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2418]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1F2AIRY' (23#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:2201]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_microblaze_0_xlconcat_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_microblaze_0_xlconcat_0' (24#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_mig_7series_0_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_mig_7series_0_0' (25#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_mig_7series_0_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'arty_eth_000_mig_7series_0_0' requires 64 connections, but only 57 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:877]
+INFO: [Synth 8-6157] synthesizing module 'arty_eth_000_rst_mig_7series_0_83M_0' [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_rst_mig_7series_0_83M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_rst_mig_7series_0_83M_0' (26#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/.Xil/Vivado-9396-DESKTOP-PV7K49D/realtime/arty_eth_000_rst_mig_7series_0_83M_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'rst_mig_7series_0_83M' of module 'arty_eth_000_rst_mig_7series_0_83M_0' requires 10 connections, but only 9 given [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:935]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000' (27#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/synth/arty_eth_000.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [E:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (26#1) [E:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
-INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_wrapper' (27#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/hdl/arty_eth_000_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (28#1) [E:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
+INFO: [Synth 8-6155] done synthesizing module 'arty_eth_000_wrapper' (29#1) [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/hdl/arty_eth_000_wrapper.v:12]
 WARNING: [Synth 8-3331] design s00_couplers_imp_NF1TTE has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_NF1TTE has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design s00_couplers_imp_NF1TTE has unconnected port S_ACLK
@@ -113,7 +119,7 @@ WARNING: [Synth 8-3331] design m00_couplers_imp_KBKMHT has unconnected port M_AR
 WARNING: [Synth 8-3331] design m00_couplers_imp_KBKMHT has unconnected port S_ACLK
 WARNING: [Synth 8-3331] design m00_couplers_imp_KBKMHT has unconnected port S_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 538.574 ; gain = 157.656
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 541.668 ; gain = 159.652
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -126,10 +132,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 538.574 ; gain = 157.656
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 541.668 ; gain = 159.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 538.574 ; gain = 157.656
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 541.668 ; gain = 159.652
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -172,9 +178,17 @@ Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/s
 Finished Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_ilmb_bram_if_cntlr_0/arty_eth_000_ilmb_bram_if_cntlr_0/arty_eth_000_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'arty_eth_000_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
 Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_lmb_bram_0/arty_eth_000_lmb_bram_0/arty_eth_000_lmb_bram_0_in_context.xdc] for cell 'arty_eth_000_i/microblaze_0_local_memory/lmb_bram'
 Finished Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_lmb_bram_0/arty_eth_000_lmb_bram_0/arty_eth_000_lmb_bram_0_in_context.xdc] for cell 'arty_eth_000_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_0_0/arty_eth_000_mc6800_controller_0_0/arty_eth_000_mc6800_controller_0_0_in_context.xdc] for cell 'arty_eth_000_i/mc6800_controller_0'
+Finished Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_0_0/arty_eth_000_mc6800_controller_0_0/arty_eth_000_mc6800_controller_0_0_in_context.xdc] for cell 'arty_eth_000_i/mc6800_controller_0'
+Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_1_0/arty_eth_000_mc6800_controller_1_0/arty_eth_000_mc6800_controller_1_0_in_context.xdc] for cell 'arty_eth_000_i/mc6800_controller_1'
+Finished Parsing XDC File [c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_1_0/arty_eth_000_mc6800_controller_1_0/arty_eth_000_mc6800_controller_1_0_in_context.xdc] for cell 'arty_eth_000_i/mc6800_controller_1'
 Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc]
 Finished Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/arty_eth_000_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/arty_eth_000_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc]
+Finished Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/arty_eth_000_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/arty_eth_000_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/dont_touch.xdc]
@@ -184,23 +198,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 817.594 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 826.043 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'arty_eth_000_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '12.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 817.594 ; gain = 436.676
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 826.043 ; gain = 444.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 817.594 ; gain = 436.676
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 826.043 ; gain = 444.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1/arty_eth_000_clk_wiz_0_1_in_context.xdc, line 7).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_sdram_addr[0]. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0_in_context.xdc, line 2).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_sdram_addr[0]. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0_in_context.xdc, line 3).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_sdram_addr[10]. (constraint file  c:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/ip/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0/arty_eth_000_mig_7series_0_0_in_context.xdc, line 4).
@@ -320,11 +334,13 @@ Applied set_property DONT_TOUCH = true for arty_eth_000_i/microblaze_0_local_mem
 Applied set_property DONT_TOUCH = true for arty_eth_000_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for arty_eth_000_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for arty_eth_000_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for arty_eth_000_i/mc6800_controller_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for arty_eth_000_i/mc6800_controller_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 817.594 ; gain = 436.676
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 826.043 ; gain = 444.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 817.594 ; gain = 436.676
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 826.043 ; gain = 444.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -370,7 +386,7 @@ WARNING: [Synth 8-3331] design arty_eth_000_microblaze_0_axi_periph_0 has unconn
 WARNING: [Synth 8-3331] design arty_eth_000_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design arty_eth_000_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 817.594 ; gain = 436.676
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 826.043 ; gain = 444.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -384,20 +400,21 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/clk_wiz_0/clk_out1' to pin 'arty_eth_000_i/clk_wiz_0/bbstub_clk_out1/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/clk_wiz_0/clk_out2' to pin 'arty_eth_000_i/clk_wiz_0/bbstub_clk_out2/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/clk_wiz_0/clk_out3' to pin 'arty_eth_000_i/clk_wiz_0/bbstub_clk_out3/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/clk_wiz_0/clk_out4' to pin 'arty_eth_000_i/clk_wiz_0/bbstub_clk_out4/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/mig_7series_0/ui_clk' to pin 'arty_eth_000_i/mig_7series_0/bbstub_ui_clk/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/mdm_1/Dbg_Clk_0' to pin 'arty_eth_000_i/mdm_1/bbstub_Dbg_Clk_0/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/mdm_1/Dbg_Update_0' to pin 'arty_eth_000_i/mdm_1/bbstub_Dbg_Update_0/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/BRAM_Clk_A' to pin 'arty_eth_000_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'arty_eth_000_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/BRAM_Clk_A' to pin 'arty_eth_000_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
-INFO: [Synth 8-5819] Moved 8 constraints on hierarchical pins to their respective driving/loading pins
+INFO: [Synth 8-5819] Moved 9 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 844.984 ; gain = 464.066
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 848.863 ; gain = 466.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 845.133 ; gain = 464.215
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 849.160 ; gain = 467.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -409,7 +426,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 850.887 ; gain = 468.871
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -433,7 +450,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -446,7 +463,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -458,25 +475,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -492,17 +509,19 @@ Report BlackBoxes:
 |4     |arty_eth_000_axi_timer_0_0           |         1|
 |5     |arty_eth_000_axi_uartlite_0_0        |         1|
 |6     |arty_eth_000_clk_wiz_0_1             |         1|
-|7     |arty_eth_000_mdm_1_0                 |         1|
-|8     |arty_eth_000_microblaze_0_0          |         1|
-|9     |arty_eth_000_microblaze_0_axi_intc_0 |         1|
-|10    |arty_eth_000_microblaze_0_xlconcat_0 |         1|
-|11    |arty_eth_000_mig_7series_0_0         |         1|
-|12    |arty_eth_000_rst_mig_7series_0_83M_0 |         1|
-|13    |arty_eth_000_dlmb_bram_if_cntlr_0    |         1|
-|14    |arty_eth_000_dlmb_v10_0              |         1|
-|15    |arty_eth_000_ilmb_bram_if_cntlr_0    |         1|
-|16    |arty_eth_000_ilmb_v10_0              |         1|
-|17    |arty_eth_000_lmb_bram_0              |         1|
+|7     |arty_eth_000_mc6800_controller_0_0   |         1|
+|8     |arty_eth_000_mc6800_controller_1_0   |         1|
+|9     |arty_eth_000_mdm_1_0                 |         1|
+|10    |arty_eth_000_microblaze_0_0          |         1|
+|11    |arty_eth_000_microblaze_0_axi_intc_0 |         1|
+|12    |arty_eth_000_microblaze_0_xlconcat_0 |         1|
+|13    |arty_eth_000_mig_7series_0_0         |         1|
+|14    |arty_eth_000_rst_mig_7series_0_83M_0 |         1|
+|15    |arty_eth_000_dlmb_bram_if_cntlr_0    |         1|
+|16    |arty_eth_000_dlmb_v10_0              |         1|
+|17    |arty_eth_000_ilmb_bram_if_cntlr_0    |         1|
+|18    |arty_eth_000_ilmb_v10_0              |         1|
+|19    |arty_eth_000_lmb_bram_0              |         1|
 +------+-------------------------------------+----------+
 
 Report Cell Usage: 
@@ -519,35 +538,37 @@ Report Cell Usage:
 |8     |arty_eth_000_ilmb_bram_if_cntlr_0    |     1|
 |9     |arty_eth_000_ilmb_v10_0              |     1|
 |10    |arty_eth_000_lmb_bram_0              |     1|
-|11    |arty_eth_000_mdm_1_0                 |     1|
-|12    |arty_eth_000_microblaze_0_0          |     1|
-|13    |arty_eth_000_microblaze_0_axi_intc_0 |     1|
-|14    |arty_eth_000_microblaze_0_xlconcat_0 |     1|
-|15    |arty_eth_000_mig_7series_0_0         |     1|
-|16    |arty_eth_000_rst_mig_7series_0_83M_0 |     1|
-|17    |arty_eth_000_xbar_0                  |     1|
-|18    |IBUF                                 |    10|
-|19    |IOBUF                                |     1|
-|20    |OBUF                                 |     9|
+|11    |arty_eth_000_mc6800_controller_0_0   |     1|
+|12    |arty_eth_000_mc6800_controller_1_0   |     1|
+|13    |arty_eth_000_mdm_1_0                 |     1|
+|14    |arty_eth_000_microblaze_0_0          |     1|
+|15    |arty_eth_000_microblaze_0_axi_intc_0 |     1|
+|16    |arty_eth_000_microblaze_0_xlconcat_0 |     1|
+|17    |arty_eth_000_mig_7series_0_0         |     1|
+|18    |arty_eth_000_rst_mig_7series_0_83M_0 |     1|
+|19    |arty_eth_000_xbar_0                  |     1|
+|20    |IBUF                                 |    40|
+|21    |IOBUF                                |     1|
+|22    |OBUF                                 |    39|
 +------+-------------------------------------+------+
 
 Report Instance Areas: 
 +------+------------------------------+---------------------------------------+------+
 |      |Instance                      |Module                                 |Cells |
 +------+------------------------------+---------------------------------------+------+
-|1     |top                           |                                       |  2304|
-|2     |  arty_eth_000_i              |arty_eth_000                           |  2284|
+|1     |top                           |                                       |  2425|
+|2     |  arty_eth_000_i              |arty_eth_000                           |  2345|
 |3     |    microblaze_0_axi_periph   |arty_eth_000_microblaze_0_axi_periph_0 |   485|
 |4     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_1F2AIRY  |   496|
 +------+------------------------------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 851.625 ; gain = 469.609
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 846.988 ; gain = 187.051
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 846.988 ; gain = 466.070
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 851.625 ; gain = 185.234
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 851.625 ; gain = 469.609
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -556,11 +577,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-80 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+86 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 867.508 ; gain = 493.496
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 870.242 ; gain = 495.273
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1/arty_eth_000_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file arty_eth_000_wrapper_utilization_synth.rpt -pb arty_eth_000_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 867.508 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jul  1 15:17:16 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 870.480 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  1 19:27:44 2018...

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Jul  1 15:13:18 2018
+| Date         : Sun Jul  1 19:25:56 2018
 | Host         : DESKTOP-PV7K49D running 64-bit major release  (build 9200)
 | Command      : report_utilization -file arty_eth_000_clk_wiz_0_1_utilization_synth.rpt -pb arty_eth_000_clk_wiz_0_1_utilization_synth.pb
 | Design       : arty_eth_000_clk_wiz_0_1
@@ -112,7 +112,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
+| BUFGCTRL   |    5 |     0 |        32 | 15.63 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         5 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
@@ -146,7 +146,7 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| BUFG       |    4 |               Clock |
+| BUFG       |    5 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 | LUT1       |    1 |                 LUT |
 | IBUF       |    1 |                  IO |

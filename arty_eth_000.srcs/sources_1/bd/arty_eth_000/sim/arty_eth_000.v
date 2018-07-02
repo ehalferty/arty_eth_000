@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Sun Jul  1 15:04:55 2018
+//Date        : Sun Jul  1 19:24:39 2018
 //Host        : DESKTOP-PV7K49D running 64-bit major release  (build 9200)
 //Command     : generate_target arty_eth_000.bd
 //Design      : arty_eth_000
@@ -9,9 +9,15 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "arty_eth_000,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=arty_eth_000,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=24,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "arty_eth_000.hwdef" *) 
+(* CORE_GENERATION_INFO = "arty_eth_000,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=arty_eth_000,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "arty_eth_000.hwdef" *) 
 module arty_eth_000
-   (ddr3_sdram_addr,
+   (address,
+    btn,
+    cpu_clock,
+    data_from_fpga,
+    data_from_fpga_enable_n,
+    data_to_fpga,
+    ddr3_sdram_addr,
     ddr3_sdram_ba,
     ddr3_sdram_cas_n,
     ddr3_sdram_ck_n,
@@ -41,10 +47,22 @@ module arty_eth_000
     eth_mii_tx_en,
     eth_mii_txd,
     eth_ref_clk,
+    irq_n,
+    led,
+    nmi_n,
     reset,
+    reset_n,
+    sw,
     sys_clock,
     usb_uart_rxd,
-    usb_uart_txd);
+    usb_uart_txd,
+    write_n);
+  input [15:0]address;
+  input btn;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CPU_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CPU_CLOCK, CLK_DOMAIN arty_eth_000_mc6800_controller_1_0_cpu_clock, FREQ_HZ 100000000, PHASE 0.000" *) output [1:0]cpu_clock;
+  output [7:0]data_from_fpga;
+  output data_from_fpga_enable_n;
+  input [7:0]data_to_fpga;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr3_sdram ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ddr3_sdram, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [13:0]ddr3_sdram_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr3_sdram BA" *) output [2:0]ddr3_sdram_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr3_sdram CAS_N" *) output ddr3_sdram_cas_n;
@@ -75,11 +93,18 @@ module arty_eth_000
   (* X_INTERFACE_INFO = "xilinx.com:interface:mii:1.0 eth_mii TX_EN" *) output eth_mii_tx_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mii:1.0 eth_mii TXD" *) output [3:0]eth_mii_txd;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.ETH_REF_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.ETH_REF_CLK, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 25000000, PHASE 0.0" *) output eth_ref_clk;
+  output irq_n;
+  output [15:0]led;
+  output nmi_n;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW" *) input reset;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_N, POLARITY ACTIVE_LOW" *) output reset_n;
+  input [3:0]sw;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN arty_eth_000_sys_clock, FREQ_HZ 100000000, PHASE 0.000" *) input sys_clock;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
+  input write_n;
 
+  wire [15:0]address_0_1;
   wire axi_ethernetlite_0_MDIO_MDC;
   wire axi_ethernetlite_0_MDIO_MDIO_I;
   wire axi_ethernetlite_0_MDIO_MDIO_O;
@@ -131,9 +156,19 @@ module arty_eth_000
   wire axi_timer_0_interrupt;
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
+  wire btn_0_1;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_clk_out3;
+  wire clk_wiz_0_clk_out4;
+  wire [7:0]data_to_fpga_0_1;
+  wire [1:0]mc6800_controller_1_cpu_clock;
+  wire [7:0]mc6800_controller_1_data_from_fpga;
+  wire mc6800_controller_1_data_from_fpga_enable_n;
+  wire mc6800_controller_1_irq_n;
+  wire [15:0]mc6800_controller_1_led;
+  wire mc6800_controller_1_nmi_n;
+  wire mc6800_controller_1_reset_n;
   wire mdm_1_debug_sys_rst;
   wire microblaze_0_Clk;
   wire [31:0]microblaze_0_M_AXI_DC_ARADDR;
@@ -325,8 +360,11 @@ module arty_eth_000
   wire [0:0]rst_mig_7series_0_83M_interconnect_aresetn;
   wire rst_mig_7series_0_83M_mb_reset;
   wire [0:0]rst_mig_7series_0_83M_peripheral_aresetn;
+  wire [3:0]sw_0_1;
   wire sys_clock_1;
+  wire write_n_0_1;
 
+  assign address_0_1 = address[15:0];
   assign axi_ethernetlite_0_MDIO_MDIO_I = eth_mdio_mdc_mdio_i;
   assign axi_ethernetlite_0_MII_COL = eth_mii_col;
   assign axi_ethernetlite_0_MII_CRS = eth_mii_crs;
@@ -336,6 +374,11 @@ module arty_eth_000
   assign axi_ethernetlite_0_MII_RX_ER = eth_mii_rx_er;
   assign axi_ethernetlite_0_MII_TX_CLK = eth_mii_tx_clk;
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
+  assign btn_0_1 = btn;
+  assign cpu_clock[1:0] = mc6800_controller_1_cpu_clock;
+  assign data_from_fpga[7:0] = mc6800_controller_1_data_from_fpga;
+  assign data_from_fpga_enable_n = mc6800_controller_1_data_from_fpga_enable_n;
+  assign data_to_fpga_0_1 = data_to_fpga[7:0];
   assign ddr3_sdram_addr[13:0] = mig_7series_0_DDR3_ADDR;
   assign ddr3_sdram_ba[2:0] = mig_7series_0_DDR3_BA;
   assign ddr3_sdram_cas_n = mig_7series_0_DDR3_CAS_N;
@@ -355,9 +398,15 @@ module arty_eth_000
   assign eth_mii_tx_en = axi_ethernetlite_0_MII_TX_EN;
   assign eth_mii_txd[3:0] = axi_ethernetlite_0_MII_TXD;
   assign eth_ref_clk = clk_wiz_0_clk_out3;
+  assign irq_n = mc6800_controller_1_irq_n;
+  assign led[15:0] = mc6800_controller_1_led;
+  assign nmi_n = mc6800_controller_1_nmi_n;
   assign reset_1 = reset;
+  assign reset_n = mc6800_controller_1_reset_n;
+  assign sw_0_1 = sw[3:0];
   assign sys_clock_1 = sys_clock;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
+  assign write_n_0_1 = write_n;
   arty_eth_000_axi_ethernetlite_0_0 axi_ethernetlite_0
        (.ip2intc_irpt(axi_ethernetlite_0_ip2intc_irpt),
         .phy_col(axi_ethernetlite_0_MII_COL),
@@ -528,7 +577,29 @@ module arty_eth_000
         .clk_out1(clk_wiz_0_clk_out1),
         .clk_out2(clk_wiz_0_clk_out2),
         .clk_out3(clk_wiz_0_clk_out3),
+        .clk_out4(clk_wiz_0_clk_out4),
         .resetn(reset_1));
+  arty_eth_000_mc6800_controller_0_0 mc6800_controller_0
+       (.CLK100MHZ(1'b0),
+        .address({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .btn(1'b0),
+        .data_to_fpga({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .sw({1'b0,1'b0,1'b0,1'b0}),
+        .write_n(1'b0));
+  arty_eth_000_mc6800_controller_1_0 mc6800_controller_1
+       (.CLK100MHZ(clk_wiz_0_clk_out4),
+        .address(address_0_1),
+        .btn(btn_0_1),
+        .cpu_clock(mc6800_controller_1_cpu_clock),
+        .data_from_fpga(mc6800_controller_1_data_from_fpga),
+        .data_from_fpga_enable_n(mc6800_controller_1_data_from_fpga_enable_n),
+        .data_to_fpga(data_to_fpga_0_1),
+        .irq_n(mc6800_controller_1_irq_n),
+        .led(mc6800_controller_1_led),
+        .nmi_n(mc6800_controller_1_nmi_n),
+        .reset_n(mc6800_controller_1_reset_n),
+        .sw(sw_0_1),
+        .write_n(write_n_0_1));
   arty_eth_000_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
         .Dbg_Clk_0(microblaze_0_debug_CLK),

@@ -3,6 +3,8 @@
 
 # XDC: new/eth_ref_clk.xdc
 
+# XDC: new/mc6800_controller.xdc
+
 # Block Designs: bd/arty_eth_000/arty_eth_000.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==arty_eth_000 || ORIG_REF_NAME==arty_eth_000} -quiet] -quiet
 
@@ -59,5 +61,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==arty_eth_000_il
 
 # IP: bd/arty_eth_000/ip/arty_eth_000_lmb_bram_0/arty_eth_000_lmb_bram_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==arty_eth_000_lmb_bram_0 || ORIG_REF_NAME==arty_eth_000_lmb_bram_0} -quiet] -quiet
+
+# IP: bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_0_0/arty_eth_000_mc6800_controller_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==arty_eth_000_mc6800_controller_0_0 || ORIG_REF_NAME==arty_eth_000_mc6800_controller_0_0} -quiet] -quiet
+
+# IP: bd/arty_eth_000/ip/arty_eth_000_mc6800_controller_1_0/arty_eth_000_mc6800_controller_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==arty_eth_000_mc6800_controller_1_0 || ORIG_REF_NAME==arty_eth_000_mc6800_controller_1_0} -quiet] -quiet
 
 # XDC: bd/arty_eth_000/arty_eth_000_ooc.xdc

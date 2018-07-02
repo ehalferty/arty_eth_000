@@ -297,6 +297,21 @@ static u32_t phy_link_detect(XAxiEthernet *xemacp, u32_t phy_addr)
 		return 1;
 	return 0;
 }
+#elif defined(XLWIP_CONFIG_INCLUDE_EMACLITE)
+static u32_t phy_link_detect(XEmacLite *xemacp, u32_t phy_addr)
+{
+	u16_t status;
+
+	/* Read Phy Status register twice to get the confirmation of the current
+	 * link status.
+	 */
+	XEmacLite_PhyRead(xemacp, phy_addr, IEEE_STATUS_REG_OFFSET, &status);
+	XEmacLite_PhyRead(xemacp, phy_addr, IEEE_STATUS_REG_OFFSET, &status);
+
+	if (status & IEEE_STAT_LINK_STATUS)
+		return 1;
+	return 0;
+}
 #endif
 
 #if defined(XLWIP_CONFIG_INCLUDE_GEM)
@@ -329,6 +344,21 @@ static u32_t phy_autoneg_status(XAxiEthernet *xemacp, u32_t phy_addr)
 		return 1;
 	return 0;
 }
+#elif defined(XLWIP_CONFIG_INCLUDE_EMACLITE)
+static u32_t phy_autoneg_status(XEmacLite *xemacp, u32_t phy_addr)
+{
+	u16_t status;
+
+	/* Read Phy Status register twice to get the confirmation of the current
+	 * link status.
+	 */
+	XEmacLite_PhyRead(xemacp, phy_addr, IEEE_STATUS_REG_OFFSET, &status);
+	XEmacLite_PhyRead(xemacp, phy_addr, IEEE_STATUS_REG_OFFSET, &status);
+
+	if (status & IEEE_STAT_AUTONEGOTIATE_COMPLETE)
+		return 1;
+	return 0;
+}
 #endif
 
 void eth_link_detect(struct netif *netif)
@@ -351,7 +381,7 @@ void eth_link_detect(struct netif *netif)
 			(eth_link_status == ETH_LINK_UNDEFINED))
 		return;
 
-//	phy_link_status = phy_link_detect(xemacp, phyaddrforemac);
+	 phy_link_status = phy_link_detect(xemacp, phyaddrforemac);
 
 	if ((eth_link_status == ETH_LINK_UP) && (!phy_link_status))
 		eth_link_status = ETH_LINK_DOWN;
@@ -365,25 +395,25 @@ void eth_link_detect(struct netif *netif)
 			eth_link_status = ETH_LINK_NEGOTIATING;
 			xil_printf("Ethernet Link down\r\n");
 			break;
-//		case ETH_LINK_NEGOTIATING:
-//			if (phy_link_status &&
-//				phy_autoneg_status(xemacp, phyaddrforemac)) {
-//
-//				/* Initiate Phy setup to get link speed */
-//#if defined(XLWIP_CONFIG_INCLUDE_GEM)
-//				link_speed = phy_setup_emacps(xemacp,
-//								phyaddrforemac);
-//				XEmacPs_SetOperatingSpeed(xemacp, link_speed);
-//#elif defined(XLWIP_CONFIG_INCLUDE_AXI_ETHERNET)
-//				link_speed = phy_setup_axiemac(xemacp);
-//				XAxiEthernet_SetOperatingSpeed(xemacp,
-//							       link_speed);
-//#endif
-//				netif_set_link_up(netif);
-//				eth_link_status = ETH_LINK_UP;
-//				xil_printf("Ethernet Link up\r\n");
-//			}
-//			break;
+ 		case ETH_LINK_NEGOTIATING:
+ 			if (phy_link_status &&
+ 				phy_autoneg_status(xemacp, phyaddrforemac)) {
+
+ 				/* Initiate Phy setup to get link speed */
+ #if defined(XLWIP_CONFIG_INCLUDE_GEM)
+ 				link_speed = phy_setup_emacps(xemacp,
+ 								phyaddrforemac);
+ 				XEmacPs_SetOperatingSpeed(xemacp, link_speed);
+ #elif defined(XLWIP_CONFIG_INCLUDE_AXI_ETHERNET)
+ 				link_speed = phy_setup_axiemac(xemacp);
+ 				XAxiEthernet_SetOperatingSpeed(xemacp,
+ 							       link_speed);
+ #endif
+ 				netif_set_link_up(netif);
+ 				eth_link_status = ETH_LINK_UP;
+ 				xil_printf("Ethernet Link up\r\n");
+ 			}
+ 			break;
 	}
 }
 

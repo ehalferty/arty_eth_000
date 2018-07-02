@@ -60,13 +60,13 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param board.repoPaths C:/Users/phaz/vivado-boards-master/new/board_files
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35ticsg324-1L
   set_property board_part_repo_paths C:/Users/phaz/vivado-boards-master/new/board_files [current_project]
   set_property board_part digilentinc.com:arty-a7-35:part0:1.0 [current_project]
@@ -83,6 +83,7 @@ set rc [catch {
   add_files C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/sources_1/bd/arty_eth_000/arty_eth_000.bd
   set_param project.isImplRun false
   read_xdc C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/eth_ref_clk.xdc
+  read_xdc C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.srcs/constrs_1/new/mc6800_controller.xdc
   set_param project.isImplRun true
   link_design -top arty_eth_000_wrapper -part xc7a35ticsg324-1L
   set_param project.isImplRun false

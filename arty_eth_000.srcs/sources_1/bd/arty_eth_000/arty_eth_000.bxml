@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="arty_eth_000" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1530482762"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1530482762"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1530482762"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1530482762"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1530498291"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1530498291"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1530498291"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1530498291"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\arty_eth_000_clk_wiz_0_1\arty_eth_000_clk_wiz_0_1.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -160,6 +160,22 @@
       <File Name="sim\arty_eth_000.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\arty_eth_000_mc6800_controller_0_0\arty_eth_000_mc6800_controller_0_0.xci" Type="IP">
+        <Instance HierarchyPath="mc6800_controller_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\arty_eth_000_mc6800_controller_1_0\arty_eth_000_mc6800_controller_1_0.xci" Type="IP">
+        <Instance HierarchyPath="mc6800_controller_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="arty_eth_000.bmm" Type="BMM">

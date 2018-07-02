@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="accept_callback" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="_setup"/>
+			<item value="setup"/>
+			<item value="phy_setup"/>
+			<item value="phy_autoneg_status"/>
+			<item value="phyread"/>
+			<item value="phy_link_detect"/>
 			<item value="accept_callback"/>
 			<item value="callback"/>
-			<item value="phy_autoneg_status"/>
-			<item value="_gem"/>
-			<item value="detect"/>
-			<item value="eth_link_detect"/>
-			<item value="xemacp"/>
-			<item value="isready"/>
 		</list>
 		<list key="replacehistory">
 		</list>
