@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="arty_eth_000_lmb_bram_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_lmb_bram_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_xbar_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_ilmb_v10_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_ilmb_v10_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_dlmb_v10_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_dlmb_v10_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="arty_eth_000_ilmb_v10_0_synth_1"/>
+	</Run>
+	<Run Id="arty_eth_000_dlmb_bram_if_cntlr_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_dlmb_bram_if_cntlr_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_ilmb_bram_if_cntlr_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_ilmb_bram_if_cntlr_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_axi_smc_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_axi_smc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_mdm_1_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_mdm_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_axi_timer_0_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_axi_timer_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_microblaze_0_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_microblaze_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_axi_ethernetlite_0_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_axi_ethernetlite_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_clk_wiz_0_1_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_clk_wiz_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_mig_7series_0_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_mig_7series_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_microblaze_0_axi_intc_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_microblaze_0_axi_intc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_microblaze_0_xlconcat_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_microblaze_0_xlconcat_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_rst_mig_7series_0_83M_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_rst_mig_7series_0_83M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="arty_eth_000_axi_uartlite_0_0_synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/arty_eth_000_axi_uartlite_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="arty_eth_000_lmb_bram_0_synth_1"/>
+		<Parent Id="arty_eth_000_xbar_0_synth_1"/>
+		<Parent Id="arty_eth_000_ilmb_v10_0_synth_1"/>
+		<Parent Id="arty_eth_000_dlmb_v10_0_synth_1"/>
+		<Parent Id="arty_eth_000_dlmb_bram_if_cntlr_0_synth_1"/>
+		<Parent Id="arty_eth_000_ilmb_bram_if_cntlr_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_smc_0_synth_1"/>
+		<Parent Id="arty_eth_000_mdm_1_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_timer_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_ethernetlite_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_clk_wiz_0_1_synth_1"/>
+		<Parent Id="arty_eth_000_mig_7series_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_axi_intc_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_xlconcat_0_synth_1"/>
+		<Parent Id="arty_eth_000_rst_mig_7series_0_83M_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_uartlite_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="C:/Users/phaz/vivado_projects/arty_eth_000/arty_eth_000.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="arty_eth_000_lmb_bram_0_synth_1"/>
+		<Parent Id="arty_eth_000_xbar_0_synth_1"/>
+		<Parent Id="arty_eth_000_ilmb_v10_0_synth_1"/>
+		<Parent Id="arty_eth_000_dlmb_v10_0_synth_1"/>
+		<Parent Id="arty_eth_000_dlmb_bram_if_cntlr_0_synth_1"/>
+		<Parent Id="arty_eth_000_ilmb_bram_if_cntlr_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_smc_0_synth_1"/>
+		<Parent Id="arty_eth_000_mdm_1_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_timer_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_ethernetlite_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_clk_wiz_0_1_synth_1"/>
+		<Parent Id="arty_eth_000_mig_7series_0_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_axi_intc_0_synth_1"/>
+		<Parent Id="arty_eth_000_microblaze_0_xlconcat_0_synth_1"/>
+		<Parent Id="arty_eth_000_rst_mig_7series_0_83M_0_synth_1"/>
+		<Parent Id="arty_eth_000_axi_uartlite_0_0_synth_1"/>
+	</Run>
+</Runs>
+
